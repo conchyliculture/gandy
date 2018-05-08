@@ -43,6 +43,11 @@ class Gandy
         http = Net::HTTP.new(uri.hostname, uri.port)
         http.use_ssl = true
         res = http.request(req)
+        case res.code
+        when "403"
+            $stderr.puts "Maybe wrong API key"
+            raise Gandy::HTTPException.new(res)
+        end
         return JSON.parse(res.body)
     end
 
