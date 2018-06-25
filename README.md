@@ -7,6 +7,6 @@ Go to [https://doc.livedns.gandi.net/](https://doc.livedns.gandi.net/), get your
 
 Use a ACME client (such as [my fork of acme-tiny](https://github.com/conchyliculture/acme-tiny/tree/dns-01)) which uses hooks to update your DNS zone.
 
-Write a wrapper around `gandi.rb` to do the things, or if you use my fork, you can call `dns-01.rb`.
+Write a wrapper around `gandy.rb` to do the things, or if you use my fork, you can have the ACME client use `dns-01.rb` as a hook.
 
 This should probably work.
